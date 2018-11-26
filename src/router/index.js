@@ -13,6 +13,7 @@ export default new Router({
     {
       path: '/',
       component: Layout,
+      hidden: true,
       redirect: '/home',
       name: 'Home',
       children: [
@@ -24,6 +25,7 @@ export default new Router({
     {
       path: '/',
       component: Layout,
+      hidden: false,
       name: 'nav1',
       meta: {
         title: '导航一',
@@ -59,6 +61,7 @@ export default new Router({
     {
       path: '/',
       component: Layout,
+      hidden: false,
       name: 'nav3',
       meta: {
         title: '导航三',
@@ -74,6 +77,22 @@ export default new Router({
           }
         }
       ]
-    }
+    },
+    {
+      path: 'external-link',
+      component: Layout,
+      hidden: false,
+      name: 'link',
+      meta: {
+        title: '外联',
+        icon: 'el-icon-sold-out'
+      },
+      children: [
+        {
+          path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+          meta: { title: 'GeekFun' }
+        }
+      ]
+    },
   ]
 })
