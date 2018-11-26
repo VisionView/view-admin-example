@@ -11,12 +11,9 @@
             {{ child.meta.title }}
           </el-menu-item>
         </el-submenu>
-        <!-- <template v-else>
-          <el-menu-item :index="items.path" :key="items.index">
-            <i :class="items.meta.icon"></i>
-            <span slot="title">{{items.meta.title}}</span>
-          </el-menu-item>
-        </template> -->
+        <template v-else>
+          侧边栏路由加载错误，请检查路由配置！
+        </template>
       </template>
     </el-menu>
   </div>
