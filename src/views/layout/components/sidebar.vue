@@ -1,31 +1,31 @@
 <template>
   <div class="aside">
     <el-menu :router="true" :collapse="collapse">
-      <template v-for="(items, index) in $router.options.routes">
-        <el-submenu v-if="items.children && !items.hidden" :index="items.name" :key="index">
-          <template slot="title" >
-            <i :class="items.meta.icon"></i>
-            <span>{{items.meta.title}}</span>
+      <template v-for="(items, index) in routes">
+        <el-submenu v-if="!items.hidden && items.children" :index="items.name" :key="index">
+          <template slot="title"><i :class="items.meta.icon"></i>{{items.meta.title}}</template>
+          <template v-for="child in items.children">
+              <el-menu-item v-if="child.hidden" :index="child.path" :key="child.path">{{child.meta.title}}</el-menu-item>
+              <el-submenu v-else-if="child.children && !child.hidden" :index="child.path" :key="child.path">
+                <span slot="title">{{child.meta.title}}</span>
+                <el-menu-item v-for="third in child.children" :index="third.path" :key="third.name" v-if="!third.hidden">{{third.meta.title}}</el-menu-item>
+              </el-submenu>
+              <el-menu-item v-else :index="child.path" :key="child.path">{{child.meta.title}}</el-menu-item>
           </template>
-          <el-menu-item v-for="(child,i) in items.children" :key="i" :index="child.path">
-            {{ child.meta.title }}
-          </el-menu-item>
         </el-submenu>
-        <template v-else>
-          侧边栏路由加载错误，请检查路由配置！
-        </template>
       </template>
     </el-menu>
   </div>
 </template>
 <script>
 export default {
-  name: 'Sidebar',
-  data () {
-    return {}
-  },
   props: {
     collapse: Boolean
+  },
+  computed: {
+    routes () {
+      return this.$router.options.routes
+    }
   }
 }
 </script>
