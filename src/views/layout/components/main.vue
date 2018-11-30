@@ -1,5 +1,1 @@
-<template>
-  <el-main>
-    <router-view/>
-  </el-main>
-</template>
+<template><div><router-view/></div></template>

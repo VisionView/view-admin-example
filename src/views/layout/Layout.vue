@@ -16,7 +16,9 @@
           </el-dropdown-menu>
         </el-dropdown>
       </el-header>
-      <app-main/>
+      <el-main>
+        <app-main/>
+      </el-main>
     </el-container>
   </el-container>
 </template>
