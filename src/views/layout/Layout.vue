@@ -16,20 +16,20 @@
           </el-dropdown-menu>
         </el-dropdown>
       </el-header>
-      <el-main>
-        <router-view/>
-      </el-main>
+      <app-main/>
     </el-container>
   </el-container>
 </template>
 <script>
 import Sidebar from './components/sidebar'
 import BreadCrumb from './components/breadcrumb'
+import AppMain from './components/main'
 export default {
   name: 'Home',
   components: {
     Sidebar,
-    BreadCrumb
+    BreadCrumb,
+    AppMain
   },
   data () {
     return {
