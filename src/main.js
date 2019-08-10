@@ -5,9 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import App from './App'
 import router from './router'
-/*
-
-*/
+import './utils/Axios'
 import 'css/reset.css'
 import 'css/element-ui.css'
 // import 'https://at.alicdn.com/t/font_927359_go8czibrhii.css'
