@@ -34,7 +34,7 @@ axios.interceptors.response.use(
           })
           localStorage.clear()
           Router.push({ path: '/login' })
-          break;
+          break
         case 404:
           Message({
             showClose: false,
@@ -42,15 +42,15 @@ axios.interceptors.response.use(
             type: 'error'
           })
           Router.push({ path: '/404' })
-          break;
+          break
         case 404:
           Router.push({ path: '/404' })
-          break;
+          break
         case 500:
           // this.$router.push({ path: '/login' })
           localStorage.clear()
           Router.push({ path: '/login' })
-          break;
+          break
       }
     }
     return Promise.reject(error.response.data)   // 返回接口返回的错误信息
