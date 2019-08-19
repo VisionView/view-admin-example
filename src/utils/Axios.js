@@ -3,7 +3,7 @@ import axios from 'axios'
 import Router from '@/router/index'
 import { Message } from 'element-ui'
 
-Vue.prototype.$axios = axios    //全局注册，使用方法为:this.$axios
+Vue.prototype.$axios = axios    // 全局注册，使用方法为:this.$axios
 
 // 全局请求拦截
 axios.interceptors.request.use(
@@ -68,4 +68,4 @@ axios.interceptors.response.use(
 // case 503: err.message = '服务不可用(503)'; break;
 // case 504: err.message = '网络超时(504)'; break;
 // case 505: err.message = 'HTTP版本不受支持(505)'; break;
-// default: err.message = `连接出错(${err.response.status})!`;
+// default: err.message = '连接出错(${err.response.status})';
